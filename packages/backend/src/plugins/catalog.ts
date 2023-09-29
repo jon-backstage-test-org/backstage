@@ -1,5 +1,5 @@
 import { CatalogBuilder } from '@backstage/plugin-catalog-backend';
-import { GithubOrgEntityProvider } from '@backstage/plugin-catalog-backend-module-github';
+import { GithubEntityProvider, GithubOrgEntityProvider } from '@backstage/plugin-catalog-backend-module-github';
 import { ScaffolderEntitiesProcessor } from '@backstage/plugin-scaffolder-backend';
 import { Router } from 'express';
 import { PluginEnvironment } from '../types';
@@ -19,6 +19,16 @@ export default async function createPlugin(
         timeout: { minutes: 15 },
       }),
     }),
+  );
+
+  builder.addEntityProvider(
+    GithubEntityProvider.fromConfig(env.config, {
+      logger: env.logger,
+      schedule: env.scheduler.createScheduledTaskRunner({
+        frequency: { minutes: 30 },
+        timeout: { minutes: 3 },
+      }),
+    })
   );
 
   builder.addProcessor(new ScaffolderEntitiesProcessor());

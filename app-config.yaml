@@ -74,6 +74,15 @@ catalog:
     pullRequestBranchName: backstage-integration
   rules:
     - allow: [Component, System, API, Resource, Location]
+  providers:
+    github:
+      test-org:
+        organization: "jon-backstage-test-org"
+        catalogPath: "/catalog-info.yaml"
+        filters:
+          branch: "main"
+          repository: ".*"
+        validateLocationsExist: true
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
