@@ -6,6 +6,8 @@ services:
       dockerfile: packages/backend/Dockerfile
     ports:
       - 7007:7007
+    volumes:
+      - ./credentials:/app/credentials
     environment:
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
