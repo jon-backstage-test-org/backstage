@@ -16,5 +16,3 @@ spec:
   owner: backstage
   lifecycle: experimental
   system: Infrastructure
-  dependsOn:
-    - component:backstage-catalog
