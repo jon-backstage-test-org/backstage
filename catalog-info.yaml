@@ -12,7 +12,9 @@ metadata:
       title: Homepage
       icon: dashboard
 spec:
-  type: website
+  type: dev-tool
   owner: backstage
   lifecycle: experimental
   system: Infrastructure
+  dependsOn:
+    - component:backstage-catalog
