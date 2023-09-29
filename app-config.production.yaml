@@ -32,6 +32,21 @@ catalog:
   # Overrides the default list locations from app-config.yaml as these contain example data.
   # See https://backstage.io/docs/features/software-catalog/#adding-components-to-the-catalog for more details
   # on how to get entities into the catalog.
+  rules:
+    - allow: [Component, API, Resource]
+
   locations:
     - type: url
       target: https://github.com/jon-backstage-test-org/backstage-catalog/blob/main/index.yaml
+      rules:
+        - allow:
+            [
+              Component,
+              API,
+              Resource,
+              System,
+              Domain,
+              Location,
+              Group,
+              Template,
+            ]

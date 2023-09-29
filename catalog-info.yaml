@@ -16,3 +16,5 @@ spec:
   owner: backstage
   lifecycle: experimental
   system: Infrastructure
+  dependsOn:
+    - resource:github
