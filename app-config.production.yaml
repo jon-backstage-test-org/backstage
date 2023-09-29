@@ -33,7 +33,7 @@ catalog:
   # See https://backstage.io/docs/features/software-catalog/#adding-components-to-the-catalog for more details
   # on how to get entities into the catalog.
   rules:
-    - allow: [Component, API, Resource]
+    - allow: [Component, System, API, Resource, Location]
 
   locations:
     - type: url

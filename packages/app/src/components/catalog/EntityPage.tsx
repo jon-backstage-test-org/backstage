@@ -230,7 +230,7 @@ const componentPage = (
       {serviceEntityPage}
     </EntitySwitch.Case>
 
-    <EntitySwitch.Case if={isComponentType('website')}>
+    <EntitySwitch.Case if={isComponentType(['website', 'dev-tool'])}>
       {websiteEntityPage}
     </EntitySwitch.Case>
 
